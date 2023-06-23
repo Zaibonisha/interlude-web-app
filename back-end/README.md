@@ -1,4 +1,4 @@
-# Interlude Web App Back-end with React+Django
+# Interlude Web App Back-end with Django (DRF)
 
 Simple to do app with implementation of a backend and a frontend to make it more dynamic.
 
