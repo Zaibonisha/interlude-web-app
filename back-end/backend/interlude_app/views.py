@@ -16,7 +16,7 @@ def registration_view(request):
         serializer = RegistraionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors)
 
@@ -24,7 +24,7 @@ def registration_view(request):
 @api_view(['POST'],)
 @permission_classes([IsAuthenticated],)
 def logout_view(request):
-    
+
     if request.method == 'POST':
         request.user.auth_token.delete()
         return Response('User Logged out successfully' , status=status.HTTP_200_OK)

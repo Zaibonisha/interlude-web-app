@@ -113,10 +113,10 @@ USE_TZ = True
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ]
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 50,
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
 }
 
 # Static files (CSS, JavaScript, Images)
@@ -129,3 +129,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Cross-Origin Resource Sharing (CORS) Configuration
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
