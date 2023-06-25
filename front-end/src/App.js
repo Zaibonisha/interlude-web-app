@@ -1,6 +1,10 @@
+import PageRoutes from "./routes";
+
 const App = () => {
   return (
-   <div> coming soon... </div>
+   <div>
+     <PageRoutes />
+   </div>
   );
 };
 
