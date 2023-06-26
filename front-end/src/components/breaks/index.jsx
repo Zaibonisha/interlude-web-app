@@ -5,7 +5,9 @@ import Filters from './Filters';
 const index = () => {
   return (
     <div>
-      <Filters />
+      <div className="my-10">
+        <Filters />
+      </div>
       <Cards />
     </div>
   )
