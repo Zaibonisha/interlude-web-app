@@ -27,7 +27,7 @@ const Cards = () => {
         <ul key={item?.id} className="box">
           <li className="card-bg-image flex flex-col justify-between">
             <span className="flex flex-row justify-between">
-              {isClicked && item.id === clickedId ? (
+              {isClicked && item?.id === clickedId ? (
                 <FontAwesomeIcon className="fav-btn-1" onClick={() => handleFavourite(item?.id)} icon={faHeart} />
               ) : (
                 <img className="fav-btn" src={Heart} alt={item?.category} onClick={() => handleFavourite(item?.id)} />
