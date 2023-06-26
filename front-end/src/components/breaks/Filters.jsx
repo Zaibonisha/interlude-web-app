@@ -4,15 +4,15 @@ import FilterData from "./filterDB";
 
 const Filters = () => {
   return (
-    <div className="p-10 flex flex-col gap-5 text-[14px] w-[650px] m-auto filters">
+    <div className="p-5 flex flex-col gap-5 text-[14px] w-[650px] m-auto filters">
       <h2 className="text-[#FF1368]">Filters:</h2>
       <ul>
-        {FilterData.map((item) => (
+        {FilterData && FilterData.map((item) => (
           <li key={item?.id} className="my-2">
-            <div className="flex flex-row gap-10 items-center">
+            <div className="flex flex-row gap-10">
               <h3 className="text-[#8445E8]">{item?.title}:</h3>
-              <span className="flex flex-row gap-5 items-center">
-                <div>
+              <span className="flex flex-row gap-5">
+                <div className="">
                   <input
                     type="radio"
                     name={item?.name}
