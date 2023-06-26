@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Router from './router'
+import {ToastContainer} from 'react-toastify'
+import { ThemeProvider } from "@mui/material/styles";
+import Interlude from './utils/MuiTheme'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Interlude Web App
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='main-app'>
+        <Router />
+        <ToastContainer />
+      </div>
   );
 }
 
