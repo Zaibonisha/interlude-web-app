@@ -68,4 +68,5 @@ const Filters = () => {
     </div>
   );
 };
+
 export default Filters;
