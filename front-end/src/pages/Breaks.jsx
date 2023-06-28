@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, Grid, Typography, AppBar, Toolbar, InputBase, Avatar } from '@mui/material';
 
 import Navbar from "./Navbar";
+import BreaksComp from '../components/breaks';
 
 const CardComponent = ({ title, selected, onClick }) => {
   return (
@@ -31,6 +32,7 @@ const Breaks = () => {
   return (
     <div>
       <Navbar />
+      <BreaksComp />
 
       <Typography variant="h4" component="h1" sx={{ color: selectedMood ? 'red' : 'inherit' }}>
         Select mood
