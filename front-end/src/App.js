@@ -1,4 +1,9 @@
 import React from 'react';
+import React, {useState} from 'react';
+import Router from './router'
+import {ToastContainer} from 'react-toastify'
+import { ThemeProvider } from "@mui/material/styles";
+import Interlude from './utils/MuiTheme'
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -26,6 +31,10 @@ const App = () => {
         <Route path="/settings" component={Settings} />
       </Switch>
       </Sidebar>
+      <div className='main-app'>
+        <Router />
+        <ToastContainer />
+      </div>
     </BrowserRouter>
   );
 };
