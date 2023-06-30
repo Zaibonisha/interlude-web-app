@@ -1,4 +1,7 @@
 .container{
+  display: flex;
+  margin-top: 0;
+}
 .App {
   text-align: center;
 

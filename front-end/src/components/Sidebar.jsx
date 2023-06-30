@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({ children }) => {
     const menuItem = [
         {
-            path: "/",
+            path: "",
             name: "Dashboard",
             icon: <MdOutlineDashboard/>
         },
@@ -19,13 +19,13 @@ const Sidebar = ({ children }) => {
             icon: <MdSavedSearch />
         },
         {
-            path: "/exercise",
+            path: "exercise",
             name: "Exercise",
             icon: <FaHeartbeat />
         },
         
         {
-            path: "/settings",
+            path: "settings",
             name: "Settings",
             icon: <GiSettingsKnobs />
         },

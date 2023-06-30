@@ -117,8 +117,9 @@ const SignIn = () => {
               password: values.password
             };
             // setLoading(true)
-            console.log('hello')
             const {data: res} = await API.signIn(val);
+            console.log(res.token)
+            localStorage.setItem('token', res.token)
             if (res) {
               toast.success("Successfully logedin");
               navigate("/dashboard");
@@ -142,11 +143,12 @@ const SignIn = () => {
         <Box
         component={Paper}
         display={"flex"}
+        width={'100%'}
         minHeight={"100vh"}
         justifyContent="center"
         alignItems={"center"}
         elevation={3}
-        className='container'>
+        className='container__section'>
             <Grid
             component={Paper} 
             
