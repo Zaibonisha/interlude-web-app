@@ -3,6 +3,7 @@ import { Card, CardContent, Grid, Typography, AppBar, Toolbar, InputBase, Avatar
 import { MdNotificationsNone, MdSearch } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -35,7 +36,9 @@ const Navbar = () => {
             }}
           />
           <MdNotificationsNone className="icon" size={25} color="blue" />
-          <AiOutlineHeart className="icon" size={25} color="blue" />
+          <Link to="/favorites">
+                    <AiOutlineHeart className="icon" size={25} color="blue" />
+          </Link>
           <AiOutlineInfoCircle className="icon" size={25} color="blue" />
         </Toolbar>
       </AppBar>
