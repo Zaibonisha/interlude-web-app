@@ -18,6 +18,8 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import CircularProgress from "@mui/material/CircularProgress";
 import { toast } from "react-toastify";
 import API from '../../../services'
+import http from "../../../services/httpService";
+
 
 import './styles.css'
 
@@ -141,7 +143,11 @@ const SignUp = () => {
             };
             setLoading(true)
 
-            const {data: res} = await API.signUp(val);
+            const {data: res} = await http.post(process.env.REACT_APP_BASE_API + "register/", val, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
             if (res) {
                 toast.success("Successfully registered");
                 navigate("/dashboard");

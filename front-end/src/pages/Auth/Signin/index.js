@@ -19,6 +19,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import CircularProgress from "@mui/material/CircularProgress";
 import { toast } from "react-toastify";
 import API from '../../../services'
+import http from "../../../services/httpService";
 
 import './styles.css'
 
@@ -117,7 +118,11 @@ const SignIn = () => {
               password: values.password
             };
             // setLoading(true)
-            const {data: res} = await API.signIn(val);
+            const {data: res} = await http.post(process.env.REACT_APP_BASE_API + "login/", val, {
+              headers: {
+                "Content-Type": " application/json",
+              },
+            });
             console.log(res.token)
             localStorage.setItem('token', res.token)
             if (res) {

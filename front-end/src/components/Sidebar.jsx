@@ -1,12 +1,20 @@
 import React from 'react';
 import './sidebar.css';
 import { FaHeartbeat } from "react-icons/fa";
+import {useNavigate} from 'react-router-dom'
 import { TbActivityHeartbeat } from "react-icons/tb";
 import { MdSavedSearch, MdOutlineDashboard } from "react-icons/md";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Sidebar = ({ children }) => {
+    const navigate = useNavigate()
+
+    const logout = () => {
+        localStorage.clear('token')
+        navigate('/sign-in')
+    }
     const menuItem = [
         {
             path: "dashboard",
@@ -51,6 +59,7 @@ const Sidebar = ({ children }) => {
                         <div className="link_text">{item.name}</div>
                     </NavLink>
                 ))}
+                <img onClick={logout} src={LogoutIcon} />
             </div>
             <main>
   <div>{children}</div>
