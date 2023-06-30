@@ -1,6 +1,7 @@
 import React , {useEffect, useState} from 'react'
 import {createBrowserRouter, RouterProvider, Navigate, useNavigate} from 'react-router-dom'
 import MainDashboard from './Dashboard'
+import App from '../App'
 import { SignIn, SignUp, ErrorPage, Breaks, Exercise, Settings, Navbar, Sidebar, Dashboard } from '../pages'
 import API from '../../src/services'
 
@@ -9,7 +10,6 @@ const AuthRoute = ({user, children}) => {
     const navigate = useNavigate();
     const verifySession = () => {
         if (localStorage.getItem('token')) {
-            console.log('hello')
             setAuthenticated(true);
         } else {
             navigate('/sign-in');
@@ -38,10 +38,13 @@ const router = createBrowserRouter([
                 <MainDashboard />
             </AuthRoute>
         ),
-        errorElement: <ErrorPage />,
+        beforeEnter: (to, from, next) => {
+            if (!localStorage.getItem('token')) next({name: 'login'})
+            else next()
+          },
         children: [
             {
-                path: 'dashboard',
+                path: '',
                 element: <Dashboard />
             },
             {

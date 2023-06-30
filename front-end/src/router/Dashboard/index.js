@@ -9,7 +9,7 @@ const MainDashboard = () => {
     return (
         <Box>
                 <Sidebar>
-                    <Dashboard/>
+                    <Outlet/>
                 </Sidebar>
         </Box>
     )

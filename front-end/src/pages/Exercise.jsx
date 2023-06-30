@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
@@ -10,11 +10,11 @@ import { GrFavorite } from 'react-icons/gr';
 
 const Exercise = () => {
   const [favorites, setFavorites] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleFavoriteClick = (cardData) => {
     setFavorites((prevFavorites) => [...prevFavorites, cardData]);
-    history.push('/favorites');
+    navigate('/favorites');
   };
 
   const cards = [

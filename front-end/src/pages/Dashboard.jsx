@@ -34,16 +34,16 @@ const Dashboard = () => {
               </Typography>
               <div style={{ marginTop: '10px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                  <img src="breathing.png" alt="Breathing" style={{ width: '20vw', height: '29vh', marginRight: '10px' }} />
-                  <span>Breathing Exercise</span>
+                  <img src="breathing.png" alt="Breathing" style={{ width: '20vw', height: '29vh', marginRight: '10px', borderRadius: '20px' }} />
+                  <Typography variant='h5'>Breathing Exercise</Typography>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                  <img src="stretching.png" alt="Stretching" style={{ width: '20vw', height: '29vh', marginRight: '10px' }} />
-                  <span>Stretching Routine</span>
+                  <img src="stretching.png" alt="Stretching" style={{ width: '20vw', height: '29vh', marginRight: '10px', borderRadius: '20px' }} />
+                  <Typography variant='h5'>Stretching Routine</Typography>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src="steps.png" alt="Steps" style={{ width: '20vw', height: '29vh', marginRight: '10px' }} />
-                  <span>Steps</span>
+                  <img src="steps.png" alt="Steps" style={{ width: '20vw', height: '29vh', marginRight: '10px', borderRadius: '20px' }} />
+                  <Typography variant='h5'>Steps</Typography>
                 </div>
               </div>
             </CardContent>
