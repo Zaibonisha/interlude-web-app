@@ -13,7 +13,7 @@ import Exercise from './pages/Exercise';
 
 import Settings from './pages/Settings';
 
-//import Topbar from './components/Topbar';
+
 
 const App = () => {
   return (
