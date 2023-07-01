@@ -77,18 +77,18 @@ const Navbar = () => {
               <img
                 className="fav-btn"
                 src={Heart}
-                alt={item?.category}
+                alt={item?.category?.difficult}
                 onClick={() => handleFavourite(item?.id)}
               />
             )}
             <div className="flex flex-col gap-2 text-[#A7DAFF] text-[14px]">
-              <p className="duration-category text-center">{item?.duration}</p>
+              <p className="duration-category text-center">{item?.category?.breakTime}</p>
               <p className="duration-category text-center">{item?.category}</p>
             </div>
           </span>
           <div className="flex flex-row gap-5">
-            <img src={ProfileImg} alt={item?.category} className="profileImg" />
-            <p>Jessica Redman</p>
+            <img src={ProfileImg} alt={item?.category?.difficult} className="profileImg" />
+            <p>{item?.instructor}</p>
           </div>
         </li>
         <li className="single-card">{item?.description}</li>
