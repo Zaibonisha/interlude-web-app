@@ -23,6 +23,18 @@ const FilterData = [
     name: 'equipment',
     value: ['yes', 'no'],
   },
+  {
+    id: 5,
+    title: 'mood',
+    name: 'mood',
+    value: ['calm', 'focus', 'relax'],
+  },
+  {
+    id: 6,
+    title: 'activity',
+    name: 'activity',
+    value: ['art and craft', 'exercise', 'meditation'],
+  },
 ]
 
 export default FilterData;

@@ -18,10 +18,11 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import CardData from "../components/breaks/db";
-import "../assets/styles/breaks/cards.css"
+import "../assets/styles/breaks/cards.css";
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
+  const [searchNotFound, setSearchNotFound] = useState(false);
   const [searchedData, setSearchedData] = useState();
   const [isClicked, setIsClicked] = useState(false);
   const [clickedId, setClickedId] = useState(0);
@@ -37,26 +38,32 @@ const Navbar = () => {
   };
 
   const handleSearch = () => {
-    const filteredData = CardData.filter((item) =>
-      Object.keys(item).some((key) =>
-        item[key]
-          .toString()
-          .toLowerCase()
-          .includes(searchText.toLocaleLowerCase())
-      )
-    );
-    console.log(filteredData);
-    setSearchedData(filteredData);
+    if (searchText.length > 1) {
+      const filteredData = CardData.filter((item) =>
+        Object.keys(item).some((key) =>
+          item[key]
+            .toString()
+            .toLowerCase()
+            .includes(searchText.toLocaleLowerCase())
+        )
+      );
+      setSearchedData(filteredData);
+    } else if (searchText.length > 0) {
+      setSearchedData([]);
+    } else {
+      setSearchNotFound(false);
+      setSearchedData([]);
+    }
   };
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
     handleSearch();
   };
-
+ 
   const searchResult =
-    searchedData &&
-    searchedData.map((item) => (
+    searchNotFound !== true ? (
+    searchedData?.map((item) => (
       <ul key={item?.id} className="box">
         <li className="card-bg-image flex flex-col justify-between">
           <span className="flex flex-row justify-between">
@@ -91,7 +98,12 @@ const Navbar = () => {
           </button>
         </li>
       </ul>
-    ));
+    ))
+    ) : (
+      <div>
+        <span className="text-[#000] text-center">No result found!</span>
+      </div>
+    )
   return (
     <>
       <div>

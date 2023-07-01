@@ -68,27 +68,27 @@ const Cards = () => {
                     <img
                       className="fav-btn"
                       src={Heart}
-                      alt={item?.category}
+                      alt={item?.category?.difficult}
                       onClick={() => handleFavourite(item?.id)}
                     />
                   </div>
                 )}
                 <div className="flex flex-col gap-2 text-[#A7DAFF] text-[14px]">
                   <p className="duration-category text-center">
-                    {item?.duration}
+                    {item?.category?.breakTime}
                   </p>
                   <p className="duration-category text-center">
-                    {item?.category}
+                    {item?.category?.difficult}
                   </p>
                 </div>
               </span>
               <div className="flex flex-row gap-5">
                 <img
                   src={ProfileImg}
-                  alt={item?.category}
+                  alt={item?.category?.difficult}
                   className="profileImg"
                 />
-                <p>Jessica Redman</p>
+                <p>{item?.instructor}</p>
               </div>
             </li>
             <li className="single-card">{item?.description}</li>
