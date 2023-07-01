@@ -4,7 +4,7 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'easy',
-        breakTime: '15 min',
+        breakTime: 15,
         environment: 'outdoor',
         equipment: 'yes',
         mood: 'relax',
@@ -17,7 +17,7 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'hard',
-        breakTime: '10 min',
+        breakTime: 10,
         environment: 'outdoor',
         equipment: 'yes',
         mood: 'calm',
@@ -30,7 +30,7 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'easy',
-        breakTime: '5 min',
+        breakTime: 5,
         environment: 'outdoor',
         equipment: 'yes',
         mood: ['calm', 'focus', 'relax'],
@@ -43,7 +43,7 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'easy',
-        breakTime: '5 min',
+        breakTime: 5,
         environment: 'indoor',
         equipment: 'yes',
         mood: 'calm',
@@ -56,7 +56,7 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'medium',
-        breakTime: '10 min',
+        breakTime: 10,
         environment: 'outdoor',
         equipment: 'no',
         mood: 'focus',
@@ -69,7 +69,46 @@ const CardData = [
     description: 'Water color technique for calming your soul and take you to another place from the office.',
     category: {
         difficult: 'hard',
-        breakTime: '20 min',
+        breakTime: 20,
+        environment: 'indoor',
+        equipment: 'yes',
+        mood: 'relax',
+        activity: 'meditation',
+      },
+    instructor: 'Jessica Redman',
+  },
+  {
+    id: 7,
+    description: 'Water color technique for calming your soul and take you to another place from the office.',
+    category: {
+        difficult: 'hard',
+        breakTime: 20,
+        environment: 'indoor',
+        equipment: 'yes',
+        mood: 'relax',
+        activity: 'meditation',
+      },
+    instructor: 'Jessica Redman',
+  },
+  {
+    id: 8,
+    description: 'Water color technique for calming your soul and take you to another place from the office.',
+    category: {
+        difficult: 'hard',
+        breakTime: 20,
+        environment: 'indoor',
+        equipment: 'yes',
+        mood: 'relax',
+        activity: 'meditation',
+      },
+    instructor: 'Jessica Redman',
+  },
+  {
+    id: 9,
+    description: 'Water color technique for calming your soul and take you to another place from the office.',
+    category: {
+        difficult: 'hard',
+        breakTime: 20,
         environment: 'indoor',
         equipment: 'yes',
         mood: 'relax',

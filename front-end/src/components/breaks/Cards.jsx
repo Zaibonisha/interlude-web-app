@@ -31,6 +31,20 @@ const Cards = () => {
     setHover(false);
   };
 
+  // const [seconds, setSeconds] = useState();
+  
+  //   const handleTimer = (id) => {
+  //     data.map((item) => {
+  //       if (item?.id === id) {
+  //         setSeconds(item?.category?.breakTime);
+  //         if (seconds > 0) {
+  //           setTimeout(() => setSeconds(seconds - 1), 1000);
+  //       }
+  //       }
+  //   })
+
+  //   };
+
   return (
     <div className="text-[#fff] flex flex-row gap-10 card-container">
       {data &&
