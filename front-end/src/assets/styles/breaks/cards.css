@@ -64,3 +64,10 @@
   height: 55px;
   flex-shrink: 0;
 }
+
+.search-input {
+  border-radius: 6px;
+  border: 2px solid #5600e3;
+  color: #000;
+  padding: 4px 22px;
+}
