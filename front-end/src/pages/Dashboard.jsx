@@ -127,7 +127,7 @@ const Dashboard = () => {
         <Grid item xs={12} sm={6} md={6}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={6}>
-              <Card style={{ height: '42vh', boxShadow: 'none', border: '1px solid blue' }}>
+              <Card style={{ height: '45.5vh', boxShadow: 'none', border: '1px solid blue' }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
                     Your wellbeing focus:
@@ -147,7 +147,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item xs={12} sm={6} md={6}>
-              <Card style={{ height: '42vh', boxShadow: 'none', border: '1px solid blue' }}>
+              <Card style={{ height: '45.5vh', boxShadow: 'none', border: '1px solid blue' }}>
                 <CardContent>
                   <Typography variant="p" component="div">
                     How many glasses of water did you drink today?
