@@ -3,26 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Heart from "../assets/images/fav-heart.png";
 import ProfileImg from "../assets/images/profile-pic.png";
-import {
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-  AppBar,
-  Toolbar,
-  InputBase,
-  Avatar,
-} from "@mui/material";
-import { MdNotificationsNone, MdSearch } from "react-icons/md";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
+// import {
+//   Card,
+//   CardContent,
+//   Grid,
+//   Typography,
+//   AppBar,
+//   Toolbar,
+//   InputBase,
+//   Avatar,
+// } from "@mui/material";
+// import { MdNotificationsNone, MdSearch } from "react-icons/md";
+// import { AiOutlineHeart } from "react-icons/ai";
+// import { AiOutlineInfoCircle } from "react-icons/ai";
+// import { Link } from "react-router-dom";
 import CardData from "../components/breaks/db";
 import "../assets/styles/breaks/cards.css";
+import TopBar from "../components/common/TopBar";
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
-  const [searchedData, setSearchedData] = useState();
+  const [searchedData, setSearchedData] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   const [clickedId, setClickedId] = useState(0);
 
@@ -53,6 +54,8 @@ const Navbar = () => {
       );
       setSearchedData(filteredData);
       console.log(filteredData)
+    } else {
+      setSearchedData([]);
     }
   };
  
@@ -95,7 +98,8 @@ const Navbar = () => {
   
   return (
     <>
-      <div>
+    <TopBar searchText={searchResult} handleChange={handleChange} />
+      {/* <div>
         <AppBar
           position="static"
           sx={{ background: "transparent", boxShadow: "none" }}
@@ -127,7 +131,7 @@ const Navbar = () => {
             <AiOutlineInfoCircle className="icon" size={25} color="blue" />
           </Toolbar>
         </AppBar>
-      </div>
+      </div> */}
       <div className="search-result text-[#fff] flex flex-row gap-10 card-container">
         {searchResult}
       </div>

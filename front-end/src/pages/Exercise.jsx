@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { GrFavorite } from 'react-icons/gr';
+import TopBar from '../components/common/TopBar';
 
 const Exercise = () => {
   const [favorites, setFavorites] = useState([]);
@@ -64,6 +65,7 @@ const Exercise = () => {
 
   return (
     <div>
+      <TopBar />
       <Grid container spacing={2}>
         {cards.map((card, index) => (
           <Grid item key={index} xs={12} sm={6} md={6}>
