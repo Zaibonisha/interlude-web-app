@@ -29,7 +29,7 @@ const Sidebar = ({ children }) => {
     },
     {
       path: "exercise",
-      name: "Exercise",
+      name: "Exercises",
       icon: <FaHeartbeat />
     },
     {
@@ -66,7 +66,8 @@ const Sidebar = ({ children }) => {
               borderRadius: '5px',
               cursor: 'pointer',
               width: '15vw',
-              marginLeft: '10px'
+              marginLeft: '10px',
+              marginTop: '10px'
             }}onClick={logout} className="logout-button">
           Logout
         </button>

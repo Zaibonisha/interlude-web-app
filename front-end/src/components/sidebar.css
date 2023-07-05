@@ -15,7 +15,7 @@
   
   .sidebar {
     flex: 1;
-    height: 110vh;
+    height: 389vh;
     background-color: whitesmoke;
     position: sticky;
     width: 250px; 
@@ -48,6 +48,7 @@
     margin: 25px;
     outline: 2px solid blue;
     border-radius: 5px;
+    margin-bottom: 60px;
   }
   
   .link:hover {
