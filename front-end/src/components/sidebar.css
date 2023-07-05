@@ -15,7 +15,7 @@
   
   .sidebar {
     flex: 1;
-    height: 389vh;
+    height: 120vh;
     background-color: whitesmoke;
     position: sticky;
     width: 250px; 
