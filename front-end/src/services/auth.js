@@ -7,7 +7,6 @@ const signUp = (data) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(process.env.REACT_APP_BASE_API)
   };
 
 
