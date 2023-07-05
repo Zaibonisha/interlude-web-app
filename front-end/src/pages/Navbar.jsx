@@ -53,13 +53,15 @@ const Navbar = () => {
         )
       );
       setSearchedData(filteredData);
-      console.log(filteredData)
+      console.log(filteredData);
     } else {
       setSearchedData([]);
     }
   };
- 
-  const searchResult = searchedData && searchedData?.map((item) => (
+
+  const searchResult =
+    searchedData &&
+    searchedData?.map((item) => (
       <ul key={item?.id} className="box">
         <li className="card-bg-image flex flex-col justify-between">
           <span className="flex flex-row justify-between">
@@ -83,7 +85,11 @@ const Navbar = () => {
             </div>
           </span>
           <div className="flex flex-row gap-5">
-            <img src={ProfileImg} alt={item?.difficult} className="profileImg" />
+            <img
+              src={ProfileImg}
+              alt={item?.difficult}
+              className="profileImg"
+            />
             <p>{item?.instructor}</p>
           </div>
         </li>
@@ -94,11 +100,11 @@ const Navbar = () => {
           </button>
         </li>
       </ul>
-    ))
-  
+    ));
+
   return (
     <>
-    <TopBar searchText={searchResult} handleChange={handleChange} />
+      <TopBar searchText={searchResult} handleChange={handleChange} />
       {/* <div>
         <AppBar
           position="static"
