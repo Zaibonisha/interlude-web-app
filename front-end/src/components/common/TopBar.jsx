@@ -22,17 +22,19 @@ const TopBar = ({ searchText, handleChange }) => {
           sx={{ background: "transparent", boxShadow: "none" }}
         >
           <Toolbar>
-            <Avatar
+            <Link to="/profile">
+             <Avatar
               alt="Profile Picture"
               src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               sx={{ marginRight: "1rem" }}
-            />
+              />
+            </Link>
             <Typography
               variant="h6"
               component="div"
               sx={{ marginRight: "2rem", color: "darkblue" }}
             >
-              Welcome back, Ivana
+              Welcome back, User
             </Typography >
             <input
               className="search-input"

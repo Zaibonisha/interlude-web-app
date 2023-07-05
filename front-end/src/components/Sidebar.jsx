@@ -66,7 +66,7 @@ const Sidebar = ({ children }) => {
               borderRadius: '5px',
               cursor: 'pointer',
               width: '15vw',
-              marginLeft: '10px',
+              marginLeft: '15px',
               marginTop: '10px'
             }}onClick={logout} className="logout-button">
           Logout
