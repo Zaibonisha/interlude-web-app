@@ -8,6 +8,7 @@ import "../../assets/styles/breaks/cards.css";
 import Timer from "./Timer";
 
 const Cards = () => {
+  // const containerRef = useRef<HTMLDivElement>(null);
   const [isClicked, setIsClicked] = useState(false);
   const [clickedId, setClickedId] = useState(0);
   const [modal, setModal] = useState(false);
@@ -38,8 +39,8 @@ const Cards = () => {
 
   return (
     <>
-    {modal && <Timer />}
-    <div className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-10 card-container`}>
+    {modal && (<Timer />)}
+    <div onBlur={() => setModal(false)} className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-10 card-container`}>
       {CardData &&
         CardData.map((item) => (
           <ul key={item?.id} className="box">
