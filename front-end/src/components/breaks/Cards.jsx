@@ -82,24 +82,24 @@ const Cards = () => {
                     <img
                       className="fav-btn"
                       src={Heart}
-                      alt={item?.category?.difficult}
+                      alt={item?.difficult}
                       onClick={() => handleFavourite(item?.id)}
                     />
                   </div>
                 )}
                 <div className="flex flex-col gap-2 text-[#A7DAFF] text-[14px]">
                   <p className="duration-category text-center">
-                    {item?.category?.breakTime}
+                    {item?.breakTime}
                   </p>
                   <p className="duration-category text-center">
-                    {item?.category?.difficult}
+                    {item?.difficult}
                   </p>
                 </div>
               </span>
               <div className="flex flex-row gap-5">
                 <img
                   src={ProfileImg}
-                  alt={item?.category?.difficult}
+                  alt={item?.difficult}
                   className="profileImg"
                 />
                 <p>{item?.instructor}</p>

@@ -22,7 +22,6 @@ import "../assets/styles/breaks/cards.css";
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
-  const [searchNotFound, setSearchNotFound] = useState(false);
   const [searchedData, setSearchedData] = useState();
   const [isClicked, setIsClicked] = useState(false);
   const [clickedId, setClickedId] = useState(0);
@@ -37,8 +36,13 @@ const Navbar = () => {
     });
   };
 
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+    handleSearch();
+  };
+
   const handleSearch = () => {
-    if (searchText.length > 1) {
+    if (searchText.length > 0) {
       const filteredData = CardData.filter((item) =>
         Object.keys(item).some((key) =>
           item[key]
@@ -48,22 +52,11 @@ const Navbar = () => {
         )
       );
       setSearchedData(filteredData);
-    } else if (searchText.length > 0) {
-      setSearchedData([]);
-    } else {
-      setSearchNotFound(false);
-      setSearchedData([]);
+      console.log(filteredData)
     }
   };
-
-  const handleChange = (e) => {
-    setSearchText(e.target.value);
-    handleSearch();
-  };
  
-  const searchResult =
-    searchNotFound !== true ? (
-    searchedData?.map((item) => (
+  const searchResult = searchedData && searchedData?.map((item) => (
       <ul key={item?.id} className="box">
         <li className="card-bg-image flex flex-col justify-between">
           <span className="flex flex-row justify-between">
@@ -77,17 +70,17 @@ const Navbar = () => {
               <img
                 className="fav-btn"
                 src={Heart}
-                alt={item?.category?.difficult}
+                alt={item?.difficult}
                 onClick={() => handleFavourite(item?.id)}
               />
             )}
             <div className="flex flex-col gap-2 text-[#A7DAFF] text-[14px]">
-              <p className="duration-category text-center">{item?.category?.breakTime}</p>
-              <p className="duration-category text-center">{item?.category}</p>
+              <p className="duration-category text-center">{item?.breakTime}</p>
+              <p className="duration-category text-center">{item?.difficult}</p>
             </div>
           </span>
           <div className="flex flex-row gap-5">
-            <img src={ProfileImg} alt={item?.category?.difficult} className="profileImg" />
+            <img src={ProfileImg} alt={item?.difficult} className="profileImg" />
             <p>{item?.instructor}</p>
           </div>
         </li>
@@ -99,11 +92,7 @@ const Navbar = () => {
         </li>
       </ul>
     ))
-    ) : (
-      <div>
-        <span className="text-[#000] text-center">No result found!</span>
-      </div>
-    )
+  
   return (
     <>
       <div>
@@ -123,24 +112,7 @@ const Navbar = () => {
               sx={{ marginRight: "2rem", color: "darkblue" }}
             >
               Welcome back, Ivana
-            </Typography>
-
-            {/* <InputBase
-            placeholder="Search..."
-            inputProps={{ 'aria-label': 'search' }}
-            sx={{
-              color: 'black',
-              borderRadius: '4px',
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              padding: '0.2rem 0.5rem',
-              border: '1px solid #00f',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-              },
-              marginLeft: '36px',
-              marginRight: '25vw' // Add this line to push the search bar to the right
-            }}
-          /> */}
+            </Typography >
             <input
               className="search-input"
               type="text"
