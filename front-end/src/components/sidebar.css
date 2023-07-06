@@ -18,13 +18,15 @@
     height: 110vh;
     background-color: whitesmoke;
     position: sticky;
-    width: 250px; 
+    width: 250px;
+    justify-content: center; 
     
   }
   
   .top_section {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .logo {
