@@ -12,6 +12,7 @@ const Cards = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [clickedId, setClickedId] = useState(0);
   const [modal, setModal] = useState(false);
+  const [breakDuration, setBreakDuration] = useState("");
 
   const handleFavourite = (id) => {
     CardData.map((item) => {
@@ -33,14 +34,17 @@ const Cards = () => {
     setHover(false);
   };
 
-  const handleModal = () => {
+  const handleModal = (id) => {
     setModal(!modal);
+    setBreakDuration(id);
   }
+
+  // onBlur={() => setModal(false)}
 
   return (
     <>
-    {modal && (<Timer />)}
-    <div onBlur={() => setModal(false)} className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-10 card-container`}>
+    {modal && (<Timer breakMinutes={breakDuration}/>)}
+    <div className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-10 card-container`}>
       {CardData &&
         CardData.map((item) => (
           <ul key={item?.id} className="box">
@@ -51,7 +55,7 @@ const Cards = () => {
                     onMouseEnter={onHover}
                     onMouseLeave={onLeave}
                     role="button"
-                    tabIndex="-3"
+                    // tabIndex="-3"
                   >
                     {hover ? (
                       <p className="text-[8px]">Remove from Favorite</p>
@@ -101,7 +105,7 @@ const Cards = () => {
             </li>
             <li className="single-card">{item?.description}</li>
             <li>
-              <button type="button" className="add-break-btn" onClick={handleModal}>
+              <button type="button" className="add-break-btn" onClick={() => handleModal(item?.breakTime)}>
                 START BREAK
               </button>
             </li>
