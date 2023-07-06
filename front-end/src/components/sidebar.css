@@ -1,76 +1,78 @@
 * {
-    margin: 0px;
-    padding: 0;
-    text-decoration: none;
-  }
-  
-  .container {
-    display: flex;
-  }
-  
-  main {
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .sidebar {
-    flex: 1;
-    height: 110vh;
-    background-color: whitesmoke;
-    position: sticky;
-    width: 250px; 
-    
-  }
-  
-  .top_section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;
-    margin: 10px
-  }
-  
-  .bars {
-    display: flex;
-    font-size: 25px;
-    margin-left: 50px;
-  }
-  
-  .link {
-    display: flex;
-    color: black;
-    padding: 10px 5px;
-    transition: all 0.5s;
-    margin: 25px;
-    outline: 2px solid blue;
-    border-radius: 5px;
-  }
-  
-  .link:hover {
-    background: lightskyblue;
-    color: #000;
-    transition: all 0.5s;
-  }
-  
-  .active {
-    background: lightskyblue;
-    color: #000;
-  }
-  
-  .icon,
-  .link_text {
-    font-size: 20px;
-    color: darkblue;
-  }
-  
-  .link_text {
-    margin-left: 25px; /* Add desired spacing between icon and text */
-    color:blue;
-    font-weight: bold;
-  }
+  margin: 0px;
+  padding: 0;
+  text-decoration: none;
+}
 
- 
+.container {
+  display: flex;
+  position: relative;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 250px; /* Adjust this value to match the width of your sidebar */
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: whitesmoke;
+  z-index: 9999; /* Set a high z-index value */
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  margin: 10px;
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.link {
+  display: flex;
+  color: black;
+  padding: 10px 5px;
+  transition: all 0.5s;
+  margin: 25px;
+  outline: 2px solid blue;
+  border-radius: 5px;
+  margin-bottom: 60px;
+}
+
+.link:hover {
+  background: lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.active {
+  background: lightskyblue;
+  color: #000;
+}
+
+.icon,
+.link_text {
+  font-size: 20px;
+  color: darkblue;
+}
+
+.link_text {
+  margin-left: 25px; /* Add desired spacing between icon and text */
+  color: blue;
+  font-weight: bold;
+}
+

@@ -11,8 +11,7 @@ instance.interceptors.request.use(
 		// const root = localStorage.getItem("persist:root");
 		// const store = JSON.parse(root);
 		// const token = JSON.parse(store.auth);
-
-		config.headers.Authorization = 'Bearer ' + "bec8cf170a20d4bdd18dfc5dcedd920f1fc75ae6";
+		config.headers.Authorization = 'Token ' + `${localStorage.getItem('token')}`;
 		return config;
 	},
 	function (error) {

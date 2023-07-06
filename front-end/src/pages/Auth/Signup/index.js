@@ -23,6 +23,11 @@ import http from "../../../services/httpService";
 
 import './styles.css'
 
+import axios from 'axios';
+
+
+const instance = axios.create();
+
 const BootstrapInput = styled(TextField)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(3),
@@ -133,17 +138,16 @@ const SignUp = () => {
       const register = async () => {
         if (formIsValid ()) {
           try {
-            let val = {
+            setLoading(true)
+
+            const {data: res} = await instance.post(process.env.REACT_APP_BASE_API + "register/", {
               first_name: values.first_name,
               last_name: values.last_name,
               email: values.email,
               username: values.username,
               password: values.password,
               password2: values.password2
-            };
-            setLoading(true)
-
-            const {data: res} = await http.post(process.env.REACT_APP_BASE_API + "register/", val, {
+            }, {
               headers: {
                 "Content-Type": "application/json",
               },

@@ -1,8 +1,11 @@
-import http from "./httpService";
+import axios from 'axios';
+
+
+const baseAPI = axios.create();
 
 const signUp = (data) => {
   
-    return http.post(process.env.REACT_APP_BASE_API + "register/", data, {
+    return baseAPI.post(process.env.REACT_APP_BASE_API + "register/", data, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -12,7 +15,7 @@ const signUp = (data) => {
 
 const singIn = (data) => {
   console.log('data', JSON.parse(data));
-    return http.post(process.env.REACT_APP_BASE_API + "login/", data, {
+    return baseAPI.post(process.env.REACT_APP_BASE_API + "login/", data, {
       headers: {
         "Content-Type": " application/json",
       },
