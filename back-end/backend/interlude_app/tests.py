@@ -34,6 +34,15 @@ class LoginLogoutTestCase(APITestCase):
         response = self.client.post(reverse('get-user-info'))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_updateprofile(self):
+        data = {"username": "example", "password": "NewPassword@123"}
+        response = self.client.post(reverse('login'), data)
+        tokenkey = json.loads(str(response.content, encoding="utf-8"))
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + tokenkey["token"])
+        updatedata = {"first_name": "fn_testcase1", "last_name": "ln_testcase1", "username": "example2", "email": "testcase2@example.com", "password": "NewPassword@1234"}
+        response = self.client.post(reverse('profile-update'), updatedata)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
     def test_logout(self):
         data = {"username": "example", "password": "NewPassword@123"}
         response = self.client.post(reverse('login'), data)
