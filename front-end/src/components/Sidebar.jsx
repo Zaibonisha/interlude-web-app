@@ -7,6 +7,7 @@ import { MdSavedSearch, MdOutlineDashboard } from "react-icons/md";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Box, Button } from '@mui/material';
 
 const Sidebar = ({ children }) => {
   const navigate = useNavigate();
@@ -58,19 +59,12 @@ const Sidebar = ({ children }) => {
             <div className="link_text">{item.name}</div>
           </NavLink>
         ))}
-        <button style={{
-              backgroundColor: 'blue',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              width: '15vw',
-              marginLeft: '15px',
-              marginTop: '10px'
-            }}onClick={logout} className="logout-button">
-          Logout
-        </button>
+        <Box sx={{display: 'flex', justifyContent: 'center'}}>
+          <Box component={Button} onClick={logout}>
+            <LogoutIcon />
+            Logout
+          </Box>
+        </Box>
       </div>
       <main>
         <div>{children}</div>

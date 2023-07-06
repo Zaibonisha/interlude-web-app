@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Card,
   CardContent,
@@ -13,8 +13,22 @@ import { MdNotificationsNone, MdSearch } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import API from '../../services'
 
 const TopBar = ({ searchText, handleChange }) => {
+
+  const [username, setUsername] = useState('')
+  const [userData, setUserData] = useState({})
+  useEffect(() => {
+    getUser()
+  }, [])
+
+  const getUser = async() => {
+    const {data: res} = await API.getUserData()
+    setUserData(res)
+    setUsername(res?.username)
+    return res
+  }
   return (
       <div>
         <AppBar
@@ -25,16 +39,16 @@ const TopBar = ({ searchText, handleChange }) => {
             <Link to="/profile">
              <Avatar
               alt="Profile Picture"
-              src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="/assets/images/OIP.jpeg"
               sx={{ marginRight: "1rem" }}
-              />
+              >{userData?.first_name?.split(' ')[0][0] + userData?.last_name?.split(' ')[0][0]}</Avatar>
             </Link>
             <Typography
               variant="h6"
               component="div"
               sx={{ marginRight: "2rem", color: "darkblue" }}
             >
-              Welcome back, User
+              Welcome back, {username}
             </Typography >
             <input
               className="search-input"
