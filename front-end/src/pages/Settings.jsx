@@ -216,7 +216,7 @@ const CardComponent = () => {
 
             <form onSubmit={handleCreditCardSubmit}>
               <div style={{ marginBottom: '1rem' }}>
-                <label htmlFor="cardNumber">Card Number:</label>
+                <label htmlFor="cardNumber" style={{ marginRight: '1rem' }}>Card Number:</label>
                 <TextField id="cardNumber" variant="outlined" style={{ width: '20vw' }} />
               </div>
               <Button type="submit" variant="contained" color="primary" fullWidth>

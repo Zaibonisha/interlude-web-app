@@ -30,7 +30,7 @@ const Sidebar = ({ children }) => {
     },
     {
       path: "exercise",
-      name: "Exercise",
+      name: "Exercises",
       icon: <FaHeartbeat />
     },
     {
