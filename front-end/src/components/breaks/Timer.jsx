@@ -6,41 +6,64 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 const Timer = ({ breakMinutes }) => {
   const [modal, setModal] = useState(true);
   const [seconds, setSeconds] = useState(59);
-  const [isStopped, setIsStopped] = useState(false);
-  
+  // const [isStopped, setIsStopped] = useState(false);
   let minutesValue = parseInt(breakMinutes);
-  console.log(minutesValue);
-  
+
+  // const today = minutesValue * 60;
   const [minutes, setMinutes] = useState(minutesValue);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSeconds(seconds - 1);
+      if (seconds === 0 && minutes > 0) {
+        setSeconds(59);
+        // setSeconds(seconds - 1);
+      } else if (minutes === 0 && seconds === 0) {
+        setMinutes(0);
+        setSeconds(0);
+      }
+    }, 1000)
+
+    setTimeout(() => {
+      setMinutes(minutes - 1);
+      if (minutes === 0 && seconds === 0) {
+        setMinutes(0);
+        setSeconds(0);
+      }
+    }, 60000);
+  }, [seconds, minutes]);
+
+  // console.log(time);
   const handleModal = () => {
     setModal(!modal);
   };
 
-  let timer;
+  // let timer;
 
-  useEffect(() => {
-    timer = setInterval(() => {
-      setSeconds(seconds - 1);
-      if (seconds === 0) {
-        setMinutes(minutes - 1);
-        setSeconds(0);
-      }
-    }, 1000);
+  // useEffect(() => {
+    
+    //   timer = setInterval(() => {
+    //     setSeconds(seconds - 1);
+    //     if (seconds === 0) {
+    //       setMinutes(minutes - 1);
+    //       setSeconds(0);
+    //     }
+    //   }, 1000);
+  //   return () => clearInterval(timer);
+  // });
 
-    return () => clearInterval(timer);
-  });
 
+  // const restart = () => {
+  //   setSeconds(0);
+  //   setMinutes(0);
+  //   // console.log("new");
 
-  const restart = () => {
-    setSeconds(0);
-    setMinutes(0);
+  // }
 
-  }
-
-  const stop = () => {
-    clearInterval(timer);
-    // setIsStopped(!isStopped);
-  }
+  // const stop = () => {
+  //   setIsStopped(!isStopped);
+  //   // clearInterval(timer);
+  // }
 
   return (
     <>
@@ -57,18 +80,20 @@ const Timer = ({ breakMinutes }) => {
             />
           </button>
           <div className="text-center">
+            <p>You break time:</p>
             <p className="text-[24px] pb-10">
               {minutes < 10 ? "0" + minutes : minutes}:
               {seconds < 10 ? "0" + seconds : seconds}
+              {/* {getFormattedTime()} */}
             </p>
             <div className="flex flex-row gap-10 justify-center">
-              <button type="button" className="end-break-btn text-[#fff]" onClick={restart}>
+              {/* <button type="button" className="end-break-btn text-[#fff]" onClick={restart}>
                 Restart
-              </button>
-              <button type="button" className="end-break-btn text-[#fff]" onClick={stop}>
+              </button> */}
+              {/* <button type="button" className="end-break-btn text-[#fff]" onClick={stop}> */}
                 {/* {isStopped ? "Resume" : "Stop"} */}
-                Stop
-              </button>
+                {/* Stop */}
+              {/* </button> */}
               <Link to="/exercise">
               <button type="button" className="end-break-btn text-[#fff]">
                 Go to exercise
