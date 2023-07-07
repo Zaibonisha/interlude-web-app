@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, Grid, Typography, AppBar, Toolbar, InputBase, Avatar } from '@mui/material';
 
 // import Navbar from "./Navbar";
-import BreaksComp from '../components/breaks/index';
+import BreaksComp from '../components/breaks/index.jsx';
 
 
 

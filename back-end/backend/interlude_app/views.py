@@ -1,7 +1,7 @@
 from .models import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from interlude_app.serializers import RegistraionSerializer
+from interlude_app.serializers import RegistraionSerializer, ProfileUpdateSerializer
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authtoken.models import Token
@@ -47,3 +47,18 @@ def getuserinfo_view(request):
         else:
             context = {"error": "token invalid or user not found."}
         return Response(context, status=status.HTTP_200_OK)
+
+
+@api_view(
+    ['POST'],)
+@permission_classes(
+    [IsAuthenticated],)
+def profileupdate_view(request):
+
+    if request.method == 'POST':
+        serializer = ProfileUpdateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.update(request=request)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors)

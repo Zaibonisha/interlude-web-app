@@ -70,7 +70,8 @@
   border-radius: 6px;
   border: 2px solid #5600e3;
   background: #5600e3;
-  width: 200px;
+  /* width: 150px; */
+  padding: 12px 21px;
   height: 55px;
   flex-shrink: 0;
 }
