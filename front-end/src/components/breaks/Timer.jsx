@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
@@ -66,12 +67,13 @@ const Timer = ({ breakMinutes }) => {
               </button>
               <button type="button" className="end-break-btn text-[#fff]" onClick={stop}>
                 {/* {isStopped ? "Resume" : "Stop"} */}
-                Start
+                Stop
               </button>
-              <button type="button" className="end-break-btn text-[#fff]" onClick={stop}>
-                {/* {isStopped ? "Resume" : "Stop"} */}
+              <Link to="/exercise">
+              <button type="button" className="end-break-btn text-[#fff]">
                 Go to exercise
               </button>
+              </Link>
             </div>
           </div>
         </div>
