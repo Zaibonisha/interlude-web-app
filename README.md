@@ -95,11 +95,12 @@ To get a local copy up and running follow these simple steps.
 - [Twitter]()
 - [LinkedIn]()
 
-👤 Amin
+👤 Amin Zayeromali
  
-- [GitHub]()
-- [Twitter]()
-- [LinkedIn]()
+- [GitHub](https://github.com/aminzayer)
+- [Twitter](https://twitter.com/AminZayeromali)
+- [LinkedIn](https://www.linkedin.com/in/aminzayeromali)
+- [Website](https://aminzayer.ir/)
  
  
 ## 🤝 Contributing
