@@ -4,7 +4,22 @@ This is a Work Mental Stress Balance App which allows Desk-workers to engage in 
 - This app is a front-end side of the final capstone project. You can find the back-end app [here](https://github.com/Zaibonisha/interlude-web-app/tree/dev/back-end).
  
 Project Screenshots:
-![image]()
+<table>
+  <tr>
+    <td> <img src="./src/assets/images/login-screenshot.png"  alt="1" width = 310px height = 205px ></td>
+    <td><img src="./src/assets/images/sign-up-screenshot.png" alt="2" width = 310px height = 205px></td>
+    <td><img src="./src/assets/images/dashboard-screenshot.png" alt="3" width = 310px height = 205px></td>
+   </tr> 
+   <tr>
+      <td><img src="./src/assets/images/exercise-screenshot.png" alt="4" width = 310px height = 205px></td>
+      <td><img src="./src/assets/images/break-screenshot.png" alt="5" width = 310px height = 205px></td>
+      <td><img src="./src/assets/images/break-timer-screenshot.png" alt="6" width = 310px height = 205px></td>
+  </td>
+   <tr>
+      <td><img src="./src/assets/images/settings-screenshot.png" alt="7" width = 310px height = 205px></td>
+  </td>
+  </tr>
+</table>
  
 Project Repo:
 [View Here](https://github.com/Zaibonisha/interlude-web-app)
@@ -69,6 +84,18 @@ To get a local copy up and running follow these simple steps.
 - [Facebook]()
  
 👤 Zaibonisha-Mohamed
+ 
+- [GitHub]()
+- [Twitter]()
+- [LinkedIn]()
+
+👤 Misgana
+ 
+- [GitHub]()
+- [Twitter]()
+- [LinkedIn]()
+
+👤 Amin
  
 - [GitHub]()
 - [Twitter]()
