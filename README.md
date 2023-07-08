@@ -54,7 +54,7 @@ To get a local copy up and running follow these simple steps.
  
 ### Setup
  
-- ```git clone https://github.com/Zaibonisha/interlude-web-app.git``
+- ```git clone https://github.com/Zaibonisha/interlude-web-app.git```
  
 - ```cd front-end```
  

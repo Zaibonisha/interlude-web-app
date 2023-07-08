@@ -56,6 +56,7 @@ const TopBar = ({ searchText, handleChange }) => {
 
   const getUser = async() => {
     const {data: res} = await API.getUserData()
+    console.log(res)
     setUserData(res)
     setUsername(res?.username)
     return res

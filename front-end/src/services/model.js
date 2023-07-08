@@ -11,7 +11,7 @@ const getUserData = (data) => {
 
 
 const updateUserInfo = (data) => {
-  return http.post(process.env.REACT_APP_BASE_API + "profileupdate", data, {
+  return http.post(process.env.REACT_APP_BASE_API + "profileupdate/", data, {
     headers: {
       "Content-Type": "application/json"
     }
