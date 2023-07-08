@@ -44,7 +44,7 @@ const Cards = () => {
   return (
     <>
     {modal && (<Timer breakMinutes={breakDuration}/>)}
-    <div className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-10 card-container`}>
+    <div className={`${!modal ? 'opacity-[100%]' : 'opacity-[0.02]'} text-[#fff] flex flex-row gap-4 justify-center card-container`}>
       {CardData &&
         CardData.map((item) => (
           <ul key={item?.id} className="box">
