@@ -5,6 +5,51 @@ A microservices-based backend built with the Django REST framework, connected to
 
 ## Usage & Implementation
 
+- API endpoints
+
+```markdown
+POST http://localhost:8000/api/register/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "",
+    "last_name": "",
+    "username": "",
+    "email": "",
+    "password": "",
+    "password2": ""
+}
+
+POST http://localhost:8000/api/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+    "password": ""
+}
+
+POST http://localhost:8000/api/logout/ HTTP/1.1
+Authorization: Token --valid token--
+content-type: application/json
+
+POST http://localhost:8000/api/getuserinfo/ HTTP/1.1
+Authorization: Token --valid token--
+content-type: application/json
+
+POST http://localhost:8000/api/profileupdate/ HTTP/1.1
+Authorization: Token --valid token--
+content-type: application/json
+
+{
+    "first_name": "",
+    "last_name": "",
+    "username": "",
+    "email": "",
+    "password": ""
+}
+
+```
+
 ### Setting Up the Backend
 
 - Next, navigate into the directory:

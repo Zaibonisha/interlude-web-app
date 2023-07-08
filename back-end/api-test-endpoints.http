@@ -1,30 +1,30 @@
-# POST http://127.0.0.1:8000/api/register/ HTTP/1.1
-# content-type: application/json
+POST http://127.0.0.1:8000/api/register/ HTTP/1.1
+content-type: application/json
 
-# {
-#     "first_name": "Amin",
-#     "last_name": "Zayer",
-#     "username": "aminzayer",
-#     "email": "amin.zayer@email.xyz",
-#     "password": "12345Amin",
-#     "password2": "12345Amin"
-# }
+{
+    "first_name": "Amin",
+    "last_name": "Zayer",
+    "username": "aminzayer",
+    "email": "amin.zayer@email.xyz",
+    "password": "12345Amin",
+    "password2": "12345Amin"
+}
 
-# POST http://127.0.0.1:8000/api/login/ HTTP/1.1
-# content-type: application/json
+POST http://127.0.0.1:8000/api/login/ HTTP/1.1
+content-type: application/json
 
-# {
-#     "username": "aminzayer",
-#     "password": "12345Amin"
-# }
+{
+    "username": "aminzayer",
+    "password": "12345Amin"
+}
 
-# POST http://127.0.0.1:8000/api/logout/ HTTP/1.1
-# Authorization: Token bec8cf170a20d4bdd18dfc5dcedd920f1fc75ae6
-# content-type: application/json
+POST http://127.0.0.1:8000/api/logout/ HTTP/1.1
+Authorization: Token bec8cf170a20d4bdd18dfc5dcedd920f1fc75ae6
+content-type: application/json
 
-# POST http://127.0.0.1:8000/api/getuserinfo/ HTTP/1.1
-# Authorization: Token 45c8ee74045c8b02a5d9836de3ff3c2340aba6b0
-# content-type: application/json
+POST http://127.0.0.1:8000/api/getuserinfo/ HTTP/1.1
+Authorization: Token 45c8ee74045c8b02a5d9836de3ff3c2340aba6b0
+content-type: application/json
 
 POST http://127.0.0.1:8000/api/profileupdate/ HTTP/1.1
 Authorization: Token 45c8ee74045c8b02a5d9836de3ff3c2340aba6b0
