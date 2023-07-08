@@ -1,6 +1,7 @@
 # Interlude Web App Back-end with Django (DRF)
 
 Simple to do app with implementation of a backend and a frontend to make it more dynamic.
+A microservices-based backend built with the Django REST framework, connected to a frontend developed with React.
 
 ## Usage & Implementation
 
