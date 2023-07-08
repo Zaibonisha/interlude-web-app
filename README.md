@@ -24,7 +24,7 @@ Project Screenshots:
 Project Repo:
 [View Here](https://github.com/Zaibonisha/interlude-web-app)
  
-# [Live Demo]()
+# [Live Demo](https://interlude-app-three.vercel.app)
  
 # Demo Account
  
@@ -54,7 +54,7 @@ To get a local copy up and running follow these simple steps.
  
 ### Setup
  
-- ```git clone https://github.com/Zaibonisha/interlude-web-app.git``
+- ```git clone https://github.com/Zaibonisha/interlude-web-app.git```
  
 - ```cd front-end```
  
@@ -95,11 +95,12 @@ To get a local copy up and running follow these simple steps.
 - [Twitter]()
 - [LinkedIn]()
 
-👤 Amin
+👤 Amin Zayeromali
  
-- [GitHub]()
-- [Twitter]()
-- [LinkedIn]()
+- [GitHub](https://github.com/aminzayer)
+- [Twitter](https://twitter.com/AminZayeromali)
+- [LinkedIn](https://www.linkedin.com/in/aminzayeromali)
+- [Website](https://aminzayer.ir/)
  
  
 ## 🤝 Contributing

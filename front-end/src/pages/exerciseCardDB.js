@@ -8,7 +8,7 @@ const cards = [
   {
     id: 2,
     title: 'Breathing Exercise 2',
-    subtitle: 'Four Calming Breathing exercises',
+    subtitle: '4 Calming Breathing exercises',
     videoSrc: 'https://www.youtube.com/embed/lPJAtHWq08k',
   },
   {
