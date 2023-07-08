@@ -5,5 +5,6 @@ import * as Model from './model'
 export default {
     signUp: Auth.signUp,
     signIn: Auth.singIn,
-    getUserData: Model.getUserData
+    getUserData: Model.getUserData,
+    updateUserInfo: Model.updateUserInfo
 }
