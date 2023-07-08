@@ -13,7 +13,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import {  styled } from "@mui/material/styles";
-
 import axios from 'axios';
 import API from '../services'
 import { toast } from "react-toastify";
@@ -108,13 +107,18 @@ const CardComponent = () => {
   const getUser = async() => {
     const {data: res} = await API.getUserData()
     setUserInfo(res)
+    setValues({
+      first_name: res.first_name,
+      last_name: res.last_name,
+      email: res.email,
+      username: res.username
+    })
   }
 
   const updateProfile = async () => {
     if (formIsValid()) {
       try {
         setLoading(true)
-
         const {data: res} = await API.updateUserInfo({
           first_name: values.first_name,
           last_name: values.last_name,
@@ -124,12 +128,14 @@ const CardComponent = () => {
         });
 
         if (res) {
+          getUser();
           toast.success("Successfully updated");
-          navigate("/profile");
+          navigate("/dashboard");
         }
 
       } catch(error) {
         setLoading(false)
+        toast.error("Unable to update your information")
       }
     } else {
       validate();
@@ -177,7 +183,6 @@ const CardComponent = () => {
       fieldValues.email &&
       fieldValues.username &&
       fieldValues.password &&
-      fieldValues.password2 &&
       Object.values(errors).every((ele) => ele === "");
     return isValid;
   };
@@ -285,220 +290,177 @@ const CardComponent = () => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={6}>
-        <Card style={{ height: '85vh', width: '35vw', boxShadow: 'none', backgroundColor: 'white', border: '1px solid blue' }}>
-          <CardContent>
-            <Typography variant="h5" component="div">
-              User Info
-            </Typography>
-
-                <Grid
-                item
-                xs={12}
-                sm={12}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}>
-                    <Stack>
-                        <div>
-                            <Typography
-                            fontSize={36}
-                            fontWeight={600}
-                            className='text'>
-                                Update
-                            </Typography>
-                        </div>
-                        <div>
-                            <Box component="form" noValidate autoComplete="off">
-                            <FormControl variant="standard" fullWidth>
-                                    <BootstrapInput
-                                        id="first_name"
-                                        name="first_name"
-                                        autoComplete="off"
-                                        placeholder="Enter your first name"
-                                        variant="outlined"
-                                        value={values.first_name}
-                                        onChange={handleChange("first_name")}
-                                        onBlur={handleChange("first_name")}
-                                        onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            // Do code here
-                                            e.preventDefault();
-                                            updateProfile()
-                                        }
-                                        }}
-                                        InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                            <PersonIcon
-                                                fontSize="small"
-                                                sx={{ color: "#D3D3D3" }}
-                                                style={{ marginRight: "-1px" }}
-                                            />
-                                            </InputAdornment>
-                                        ),
-                                        }}
-                                        {...(errors["first_name"] && {
-                                        error: true,
-                                        helperText: errors["first_name"],
-                                        })}
-                                    />
-                                </FormControl>
-                                <FormControl variant="standard" fullWidth sx={{mt: 2 }}>
-                                    <BootstrapInput
-                                        id="last_name"
-                                        name="last_name"
-                                        autoComplete="off"
-                                        placeholder="Enter your last name"
-                                        variant="outlined"
-                                        value={values.last_name}
-                                        onChange={handleChange("last_name")}
-                                        onBlur={handleChange("last_name")}
-                                        onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            // Do code here
-                                            e.preventDefault();
-                                            updateProfile()
-                                        }
-                                        }}
-                                        InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                            <PersonIcon
-                                                fontSize="small"
-                                                sx={{ color: "#D3D3D3" }}
-                                                style={{ marginRight: "-1px" }}
-                                            />
-                                            </InputAdornment>
-                                        ),
-                                        }}
-                                        {...(errors["last_name"] && {
-                                        error: true,
-                                        helperText: errors["last_name"],
-                                        })}
-                                    />
-                                </FormControl>
-                                <FormControl variant="standard" fullWidth sx={{mt: 2 }}>
-                                    <BootstrapInput
-                                        id="username"
-                                        name="username"
-                                        autoComplete="off"
-                                        placeholder="Enter your username"
-                                        variant="outlined"
-                                        value={values.username}
-                                        onChange={handleChange("username")}
-                                        onBlur={handleChange("username")}
-                                        onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            // Do code here
-                                            e.preventDefault();
-                                            updateProfile()
-                                        }
-                                        }}
-                                        InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                            <PersonIcon
-                                                fontSize="small"
-                                                sx={{ color: "#D3D3D3" }}
-                                                style={{ marginRight: "-1px" }}
-                                            />
-                                            </InputAdornment>
-                                        ),
-                                        }}
-                                        {...(errors["username"] && {
-                                        error: true,
-                                        helperText: errors["username"],
-                                        })}
-                                    />
-                                </FormControl>
-                                <FormControl variant="standard" fullWidth sx={{ mb: 3, mt: 2 }}>
-                                    <BootstrapInput
-                                        id="email"
-                                        name="email"
-                                        autoComplete="off"
-                                        placeholder="Enter your email"
-                                        variant="outlined"
-                                        value={values.email}
-                                        onChange={handleChange("email")}
-                                        onBlur={handleChange("email")}
-                                        onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            // Do code here
-                                            e.preventDefault();
-                                            updateProfile()
-                                        }
-                                        }}
-                                        InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                            <EmailIcon
-                                                fontSize="small"
-                                                sx={{ color: "#D3D3D3" }}
-                                                style={{ marginRight: "-1px" }}
-                                            />
-                                            </InputAdornment>
-                                        ),
-                                        }}
-                                        {...(errors["email"] && {
-                                        error: true,
-                                        helperText: errors["email"],
-                                        })}
-                                    />
-                                </FormControl>
-                                <FormControl variant="standard" fullWidth sx={{ mb: 3 }}>
-                                    <BootstrapInput
-                                        id="password"
-                                        name="password"
-                                        autoComplete="off"
-                                        placeholder="Enter your password"
-                                        variant="outlined"
-                                        type={values.showPassword ? "text" : "password"}
-                                        value={values.password}
-                                        onChange={handleChange("password")}
-                                        onBlur={handleChange("password")}
-                                        onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            // Do code here
-                                            e.preventDefault();
-                                            updateProfile()
-                                        }
-                                        }}
-                                        InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                            <div style={{ marginRight: "4px" }}>
-                                                <IconButton
-                                                aria-label="toggle password visibility"
-                                                onClick={handleClickShowPassword}
-                                                onMouseDown={handleMouseDownPassword}
-                                                edge="end"
-                                                >
-                                                {values.showPassword ? (
-                                                    <VisibilityOff
-                                                    fontSize="small"
-                                                    sx={{ color: "#D3D3D3" }}
-                                                    />
-                                                ) : (
-                                                    <Visibility
-                                                    fontSize="small"
-                                                    sx={{ color: "#D3D3D3" }}
-                                                    />
-                                                )}
-                                                </IconButton>
-                                            </div>
-                                            </InputAdornment>
-                                        ),
-                                        }}
-                                        {...(errors["password"] && {
-                                        error: true,
-                                        helperText: errors["password"],
-                                        })}
-                                    />
-                                    </FormControl>
-                            </Box>
-                        </div>
-                        <div style={{ marginTop: "25px" }}>
+      <Box>
+        <Grid item xs={12} sm={6} md={6}>
+          <Card style={{ height: '85vh', width: '35vw', boxShadow: 'none', backgroundColor: 'white', border: '1px solid blue' }}>
+            <CardContent>
+              <Typography variant="h5" component="div">
+                User Info
+              </Typography>
+              <form>
+                <div style={{ marginBottom: '1rem' }}>
+                  <TextField 
+                    id="first_name" 
+                    name="first_name" 
+                    placeholder='enter your first name'
+                    onChange={handleChange("first_name")}
+                    onBlur={handleChange("first_name")} 
+                    variant="outlined" 
+                    value={values.first_name}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                          // Do code here
+                          e.preventDefault();
+                          updateProfile();
+                      }
+                      }}
+                    InputProps={{
+                      endAdornment: (
+                          <InputAdornment position="end">
+                          <PersonIcon
+                              fontSize="small"
+                              sx={{ color: "#D3D3D3" }}
+                              style={{ marginRight: "-1px" }}
+                          />
+                          </InputAdornment>
+                      ),
+                      }} 
+                    fullWidth />
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <TextField 
+                    id="enter last name" 
+                    name="last_name"
+                    placeholder='enter your last name' 
+                    variant="outlined" 
+                    value={values.last_name} 
+                    onChange={handleChange("last_name")}
+                    onBlur={handleChange("last_name")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                          // Do code here
+                          e.preventDefault();
+                          updateProfile();
+                      }
+                      }}
+                    InputProps={{
+                      endAdornment: (
+                          <InputAdornment position="end">
+                          <PersonIcon
+                              fontSize="small"
+                              sx={{ color: "#D3D3D3" }}
+                              style={{ marginRight: "-1px" }}
+                          />
+                          </InputAdornment>
+                      ),
+                      }}
+                    fullWidth />
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <TextField 
+                    id="username" 
+                    name="username" 
+                    placeholder='enter your username'
+                    variant="outlined" 
+                    value={values.username} 
+                    onChange={handleChange("username")}
+                    onBlur={handleChange("username")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                          // Do code here
+                          e.preventDefault();
+                          updateProfile();
+                      }
+                      }}
+                    InputProps={{
+                      endAdornment: (
+                          <InputAdornment position="end">
+                          <PersonIcon
+                              fontSize="small"
+                              sx={{ color: "#D3D3D3" }}
+                              style={{ marginRight: "-1px" }}
+                          />
+                          </InputAdornment>
+                      ),
+                      }}
+                    fullWidth />
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <TextField 
+                    id="email" 
+                    name="email" 
+                    placeholder='enter your email'
+                    variant="outlined" 
+                    value={values.email} 
+                    onChange={handleChange("email")}
+                    onBlur={handleChange("email")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                          // Do code here
+                          e.preventDefault();
+                          updateProfile();
+                      }
+                      }}
+                    InputProps={{
+                      endAdornment: (
+                          <InputAdornment position="end">
+                          <EmailIcon
+                              fontSize="small"
+                              sx={{ color: "#D3D3D3" }}
+                              style={{ marginRight: "-1px" }}
+                          />
+                          </InputAdornment>
+                      ),
+                      }}
+                    fullWidth />
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <TextField 
+                    id="password"
+                    placeholder='enter your password' 
+                    name="password" 
+                    variant="outlined"
+                    type={values.showPassword ? "text" : "password"} 
+                    value={values.password} 
+                    onChange={handleChange("password")}
+                    onBlur={handleChange("password")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                          // Do code here
+                          e.preventDefault();
+                          updateProfile();
+                      }
+                      }}
+                    InputProps={{
+                      endAdornment: (
+                          <InputAdornment position="end">
+                          <div style={{ marginRight: "4px" }}>
+                              <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                              edge="end"
+                              >
+                              {values.showPassword ? (
+                                  <VisibilityOff
+                                  fontSize="small"
+                                  sx={{ color: "#D3D3D3" }}
+                                  />
+                              ) : (
+                                  <Visibility
+                                  fontSize="small"
+                                  sx={{ color: "#D3D3D3" }}
+                                  />
+                              )}
+                              </IconButton>
+                          </div>
+                          </InputAdornment>
+                      ),
+                      }}
+                    fullWidth 
+                    />
+                </div>
+                <div style={{ marginTop: "25px" }}>
                             <LoadingButton
                                 fullWidth
                                 variant="outlined"
@@ -508,7 +470,7 @@ const CardComponent = () => {
                                 borderRadius: "20px",
                                 float: "right",
                                 color: "#272727",
-                                backgroundColor: "#1565c0",
+                                backgroundColor: "#FF1368",
                                 fontSize: "14px",
                                 height: "50px",
                                 fontFamily:
@@ -520,23 +482,26 @@ const CardComponent = () => {
                                 border: "1px solid #272727 !important",
                                 lineHeight: "24px",
                                 }}
-                                onClick={updateProfile}
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  updateProfile()
+                                }}
                                 loading={loading}
                                 loadingIndicator={
                                 <CircularProgress sx={{ color: "#272727" }} size="25px" />
                                 }
                             >
-                                Update User Info
+                                Update Profile
                             </LoadingButton>
                             </div>
-                    </Stack>
-                </Grid>
+              </form>
 
-            {/* {userInfoSuccessMessage && <div style={{ color: 'green', marginTop: '1rem' }}>{userInfoSuccessMessage}</div>}
-            {userInfoErrorMessage && <div style={{ color: 'red', marginTop: '1rem' }}>{userInfoErrorMessage}</div>} */}
-          </CardContent>
-        </Card>
-      </Grid>
+              {/* {userInfoSuccessMessage && <div style={{ color: 'green', marginTop: '1rem' }}>{userInfoSuccessMessage}</div>}
+              {userInfoErrorMessage && <div style={{ color: 'red', marginTop: '1rem' }}>{userInfoErrorMessage}</div>} */}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Box>
 
       <Grid item xs={12} sm={6}>
         <Card style={{ height: '65vh', width: '35vw', boxShadow: 'none', backgroundColor: 'white', border: '1px solid blue' }}>

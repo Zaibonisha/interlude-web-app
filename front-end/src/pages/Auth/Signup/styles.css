@@ -1,6 +1,10 @@
 .container {
     background: #EEF0F7!important;
 }
+.container__section {
+    width: 100% !important;
+    background: #EEF0F7!important;
+}
 .text {
     color: #260063;
 }

@@ -8,7 +8,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import EmailIcon from "@mui/icons-material/Email";
 import PersonIcon from "@mui/icons-material/Person";
-import { FormControl } from '@mui/material';
+import { FormControl, Link } from '@mui/material';
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
@@ -183,7 +183,7 @@ const SignUp = () => {
         justifyContent="center"
         alignItems={"center"}
         elevation={3}
-        className='container'>
+        className='container__section'>
             <Grid
             component={Paper} 
             container
@@ -481,6 +481,28 @@ const SignUp = () => {
                             >
                                 Sign Up
                             </LoadingButton>
+                            </div>
+                            <div
+                              style={{
+                                textAlign: "center",
+                                fontFamily:
+                                  "'AllianceNo1', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'",
+                                marginTop: "10px",
+                              }}
+                              className="button-text"
+                            >
+                              <span style={{ color: "#475467" }}>
+                                Do you have an account?
+                                {"  "}
+                                <Link
+                                  underline="hover"
+                                  onClick={() => navigate("/sign-in")}
+                                  color={"#272727"}
+                                  sx={{ ml: 0.5 }}
+                                >
+                                  Sign In
+                                </Link>
+                              </span>
                             </div>
                     </Stack>
                 </Grid>
