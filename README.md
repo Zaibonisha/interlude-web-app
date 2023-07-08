@@ -6,17 +6,17 @@ This is a Work Mental Stress Balance App which allows Desk-workers to engage in 
 Project Screenshots:
 <table>
   <tr>
-    <td> <img src="./src/assets/images/login-screenshot.png"  alt="1" width = 310px height = 205px ></td>
-    <td><img src="./src/assets/images/sign-up-screenshot.png" alt="2" width = 310px height = 205px></td>
-    <td><img src="./src/assets/images/dashboard-screenshot.png" alt="3" width = 310px height = 205px></td>
+    <td> <img src="./front-end/src/assets/images/login-screenshot.png"  alt="1" width = 310px height = 205px ></td>
+    <td><img src="./front-end/src/assets/images/sign-up-screenshot.png" alt="2" width = 310px height = 205px></td>
+    <td><img src="./front-end/src/assets/images/dashboard-screenshot.png" alt="3" width = 310px height = 205px></td>
    </tr> 
    <tr>
-      <td><img src="./src/assets/images/exercise-screenshot.png" alt="4" width = 310px height = 205px></td>
-      <td><img src="./src/assets/images/break-screenshot.png" alt="5" width = 310px height = 205px></td>
-      <td><img src="./src/assets/images/break-timer-screenshot.png" alt="6" width = 310px height = 205px></td>
+      <td><img src="./front-end/src/assets/images/exercise-screenshot.png" alt="4" width = 310px height = 205px></td>
+      <td><img src="./front-end/src/assets/images/break-screenshot.png" alt="5" width = 310px height = 205px></td>
+      <td><img src="./front-end/src/assets/images/break-timer-screenshot.png" alt="6" width = 310px height = 205px></td>
   </td>
    <tr>
-      <td><img src="./src/assets/images/settings-screenshot.png" alt="7" width = 310px height = 205px></td>
+      <td><img src="./front-end/src/assets/images/settings-screenshot.png" alt="7" width = 310px height = 205px></td>
   </td>
   </tr>
 </table>
