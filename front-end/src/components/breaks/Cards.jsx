@@ -48,7 +48,7 @@ const Cards = () => {
       {CardData &&
         CardData.map((item) => (
           <ul key={item?.id} className="box">
-            <li className="card-bg-image flex flex-col justify-between">
+            <li className="card-bg-image flex flex-col justify-between" id={item?.cssId}>
               <span className="flex flex-row justify-between">
                 {isClicked && item?.id === clickedId ? (
                   <div

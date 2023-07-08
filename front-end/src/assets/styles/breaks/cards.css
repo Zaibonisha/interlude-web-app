@@ -33,11 +33,46 @@
 }
 
 .card-bg-image {
-  background-image: url('../../images/bg-card-img.png');
-  max-width: 304px;
-  height: 201px;
+  max-width: 310px;
+  height: 205px;
   padding: 10px;
   border: 3px solid #9747ff;
+}
+
+#bg-img-1 {
+  background-image: url('../../images/card-img-1.png');
+}
+
+#bg-img-2 {
+  background-image: url('../../images/card-img-2.png');
+}
+
+#bg-img-3 {
+  background-image: url('../../images/card-img-3.png');
+}
+
+#bg-img-4 {
+  background-image: url('../../images/card-img-4.png');
+}
+
+#bg-img-5 {
+  background-image: url('../../images/card-img-5.png');
+}
+
+#bg-img-6 {
+  background-image: url('../../images/card-img-6.png');
+}
+
+#bg-img-7 {
+  background-image: url('../../images/card-img-7.png');
+}
+
+#bg-img-8 {
+  background-image: url('../../images/card-img-8.png');
+}
+
+#bg-img-9 {
+  background-image: url('../../images/card-img-9.png');
 }
 
 .duration-category {
